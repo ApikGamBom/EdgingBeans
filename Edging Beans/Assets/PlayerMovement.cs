@@ -48,7 +48,6 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.R))
         {
             Debug.Log("Pressed R!");
-            playerPosition.position = new Vector3(0f, 7f, 0f);
         }
 
         velocity.y += gravity * Time.deltaTime;
