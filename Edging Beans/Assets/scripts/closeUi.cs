@@ -9,5 +9,8 @@ public class closeUi : MonoBehaviour
     public void closeBtn()
     {
         ui.SetActive(false);
+        
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 }
