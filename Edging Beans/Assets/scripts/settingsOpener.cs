@@ -8,10 +8,12 @@ public class NewBehaviourScript : MonoBehaviour
     public GameObject settingsTab;
     public string tagToCheck = "normBtn";
     public GameObject settingsTabinTab;
+
     public void load()
     {
         SceneManager.LoadScene("GameScene");
     }
+
     public void CheckChildrenForTag()
     {
         settingsTab.SetActive(!settingsTab.activeSelf);
