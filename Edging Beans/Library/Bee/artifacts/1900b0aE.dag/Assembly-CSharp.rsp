@@ -353,10 +353,14 @@
 -analyzer:"C:/Program Files (x86)/2022.3.21f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files (x86)/2022.3.21f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/CameraMovement.cs"
+"Assets/GunScript.cs"
 "Assets/PlayerMovement.cs"
 "Assets/Portal.cs"
+<<<<<<< HEAD
 "Assets/scripts/closeUi.cs"
 "Assets/scripts/openSettings.cs"
+=======
+>>>>>>> a4fe6b3373b978a72af3062e37bc8a6d0f9fce6b
 "Assets/scripts/settingsOpener.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
