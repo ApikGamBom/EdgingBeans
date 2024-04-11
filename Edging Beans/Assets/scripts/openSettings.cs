@@ -7,11 +7,6 @@ public class openSettings : MonoBehaviour
     // Start is called before the first frame update
     public GameObject canvas;
     public bool canvasState;
-    void Start()
-    {
-        //Cursor.lockState = CursorLockMode.None;
-        //Cursor.visible = true;
-    }
 
     // Update is called once per frame
     void Update()
@@ -20,6 +15,7 @@ public class openSettings : MonoBehaviour
         {
             toggleCanvas();
         }
+        
     }
     public void toggleCanvas()
     {
