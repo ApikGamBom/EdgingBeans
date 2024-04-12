@@ -6,27 +6,38 @@ public class openSettings : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject canvas;
-    public bool canvasState;
-    void Start()
-    {
-        //Cursor.lockState = CursorLockMode.None;
-        //Cursor.visible = true;
-    }
+
+    [Header("Bools")]
+    public bool menuState = true;
+    public bool cursorLocked = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetButtonDown("Cancel"))
         {
-            toggleCanvas();
+            toggleMenu();
         }
-    }
-    public void toggleCanvas()
-    {
-        canvasState = !canvasState;
-        if (canvas.activeSelf != canvasState)
+
+        if(cursorLocked)
         {
-            canvas.SetActive(canvasState);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        } else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        
+    }
+    public void toggleMenu()
+    {
+        menuState = !menuState;
+        cursorLocked = !cursorLocked;
+
+        if (canvas.activeSelf != menuState)
+        {
+            canvas.SetActive(menuState);
         }
     }
 }
