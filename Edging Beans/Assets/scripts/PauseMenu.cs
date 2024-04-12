@@ -19,16 +19,14 @@ public class PauseMenu : MonoBehaviour
     {
         if(Input.GetButtonDown("Cancel"))
         {
-            isPaused = !isPaused;
-        }
-
-        if (isPaused)
-        {
-            PauseGame();
-        }
-        else
-        {
-            ResumeGame();
+            if (isPaused)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                PauseGame();
+            }
         }
     }
 
@@ -36,12 +34,14 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
+        isPaused = true;
     }
 
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
+        isPaused = false;
     }
 
     public void GoToOptions()
