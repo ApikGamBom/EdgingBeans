@@ -14,8 +14,9 @@ public class SpacePlayerMov : MonoBehaviour
 
     [Header("Gravity")]
     public float gravity = -3f * 2f;
-    public float jumpHeight = 3f;
+    public float jumpHeight = 2f;
     public bool continousJump = true;
+    public float inAirResistance = 0.6f;
 
     [Header("GroundChecks")]
     public Transform groundCheck;
@@ -40,10 +41,23 @@ public class SpacePlayerMov : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift)) //detects for shift key pressed
         {
-            controller.Move(move * speed * Time.deltaTime * sprint); //if shift pressed this happens (player moves twice as fast)
-            Debug.Log ("Sprinting!");
+            if (isGrounded)
+            {
+                controller.Move(move * speed * Time.deltaTime * sprint); //if shift pressed this happens (player moves twice as fast)
+                Debug.Log("Sprinting!");
+            } else
+            {
+                controller.Move(move * speed * inAirResistance * Time.deltaTime * sprint); //if shift pressed this happens (player moves twice as fast)
+                Debug.Log("Sprinting!");
+            }
         } else {
-            controller.Move(move * speed * Time.deltaTime); //if shift not is pressed this happens (plyer moves at default speed wich is in the <speed> variable)
+            if (isGrounded)
+            {
+                controller.Move(move * speed * Time.deltaTime); //if shift not is pressed this happens (plyer moves at default speed wich is in the <speed> variable)
+            } else
+            {
+                controller.Move(move * speed * inAirResistance * Time.deltaTime); //if shift not is pressed this happens (plyer moves at default speed wich is in the <speed> variable)
+            }
         }
 
         if (continousJump)
